@@ -229,19 +229,23 @@
                   </div>
 
                   <!-- Boton -->
-                  <input type="submit" value="Enviar" onclick="submitForm()">
+                  <input type="submit" value="enviar" onclick="submitForm()">
 
                   <script>
-                    // Duerme antes del reset para evitar problemas
+                    // Funcion para esperar
                     var sleep = function (ms) {
                       return new Promise(resolve => setTimeout(resolve, ms));
-                    };
+                    };                    
 
-                    async function submitForm() {
+                    //Envia el formulario
+                    function submitForm() {
                       var frm = document.getElementsByName('formulario')[0];
-                      frm.submit();
-                      await sleep(10);
-                      frm.reset();
+                      frm.addEventListener("submit", async (e) => {
+                        e.preventDefault(); // Detiene en caso de error
+                        frm.submit(); // Envia
+                        await sleep(10); // Espera...
+                        frm.reset(); // ... y resetea
+                      });
                     }
                   </script>
 
