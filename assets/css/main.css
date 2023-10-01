@@ -1642,8 +1642,3 @@ textarea.textboxmod {
     -webkit-transition-delay: .12s;
     transition-delay: .12s
 }
-
-.outer-nav li.is-vis:nth-child(5) {
-    -webkit-transition-delay: .16s;
-    transition-delay: .16s
-}
