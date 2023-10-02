@@ -884,6 +884,10 @@ body {
     .intro--banner img {
         display: none
     }
+
+    div.links {
+        display: none
+    }
 }
 
 @media (max-width: 600px) and (max-height: 750px) {
