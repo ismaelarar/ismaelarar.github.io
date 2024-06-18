@@ -1,0 +1,70 @@
+id_project: b112d8bc-2621-4295-8867-3bf3a2b072d4
+name: Prueba
+description: Prueba
+datasets:
+  iris_csv:
+    shuffle: false
+    subsample: 150
+    split:
+      train: 0.8
+      test: 0.1
+      val: 0.1
+      subsample: 0
+      shuffle: false
+    inputs:
+      - label: sepal_length
+        name: sepal_length
+        description: sepal_length
+        type: numerical
+        unit: mm
+        isOutput: false
+        range:
+          - 0
+          - 10
+      - label: sepal_width
+        name: sepal_width
+        description: sepal_width
+        type: numerical
+        unit: mm
+        isOutput: false
+        range:
+          - 0
+          - 10
+      - label: petal_length
+        name: petal_length
+        description: petal_length
+        type: numerical
+        unit: mm
+        isOutput: false
+        range:
+          - 0
+          - 10
+      - label: petal_width
+        name: petal_width
+        description: petal_width
+        type: numerical
+        unit: mm
+        isOutput: false
+        range:
+          - 0
+          - 10
+    outputs:
+      - label: species
+        name: species
+        description: species
+        type: classification
+        unit: mm
+        isOutput: true
+        classes:
+          - '1'
+          - '2'
+          - '3'
+    uri: data/iris.csv
+    type: csv
+    version: ''
+experiments:
+  ann_ipynb:
+    deps:
+      - datasets/iris_csv
+    params: {}
+    script: ann.ipynb
